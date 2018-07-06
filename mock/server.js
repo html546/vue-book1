@@ -45,9 +45,9 @@ http.createServer((req, res) => {
         switch (req.method) { //?id=1
             case 'GET':
                 if (!isNaN(id)) { //查询一个
-                    read(function(books){
-                        let book = books.find(item=>item.bookId===id)
-                        if(!book)book = {}; //如果没找到则是undefined
+                    read(function (books) {
+                        let book = books.find(item => item.bookId === id)
+                        if (!book) book = {}; //如果没找到则是undefined
                         res.setHeader('Content-Type', 'application/json;charset=utf-8');
                         res.end(JSON.stringify(book));
                     })
@@ -61,15 +61,35 @@ http.createServer((req, res) => {
             case 'POST':
                 break;
             case 'PUT':
+                if (id) { //获取了当前要修改的id
+                    let str = '';
+                    req.on('data',chunk=>{
+                        str+=chunk;
+                    });
+                    req.on('end',()=>{
+                        let book = JSON.parse(str); //book要改成什么样子
+                        read(function(books){
+                            books = books.map(item=>{
+                                if(item.bookId === id){ //找到id相同的那一本书
+                                    return book;
+                                }
+                                return item; //其他书正常返回
+                            });
+                            write(books,function(){ //将数据写会json中
+                                res.end(JSON.stringify(book));
+                            })
+                        })
+                    })
+                }
                 break;
             case 'DELETE':
                 // console.log(id);
-                 read(function (books) {
-                     books = books.filter(item => item.bookId !== id);
-                     write(books,function(){
+                read(function (books) {
+                    books = books.filter(item => item.bookId !== id);
+                    write(books, function () {
                         res.end(JSON.stringify({})); //删除返回空对象
-                     });
-                 })
+                    });
+                })
                 break;
         }
         return;
