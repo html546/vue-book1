@@ -13,15 +13,19 @@ function read(cb) {
         }
     })
 }
+function write(data, cb) { //写入内容
+    fs.writeFile('./book.json', JSON.stringify(data), cb);
+}
 /* read(function (books) { //books代表所有图书
     console.log(books);
 }) */
 http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
     res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    res.setHeader('X-Powered-By', '3.2.1');
     if (req.method == 'OPTIONS') {
-        return res.send();
+        return res.end();
     }
     let { pathname, query } = url.parse(req.url, true); //true把query转化成对象
     if (pathname === '/sliders') {
@@ -54,6 +58,13 @@ http.createServer((req, res) => {
             case 'PUT':
                 break;
             case 'DELETE':
+                // console.log(id);
+                 read(function (books) {
+                     books = books.filter(item => item.bookId !== id);
+                     write(books,function(){
+                        res.end(JSON.stringify({})); //删除返回空对象
+                     });
+                 })
                 break;
         }
         return;
