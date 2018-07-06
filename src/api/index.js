@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosPromise } from 'axios';
 axios.defaults.baseURL = 'http://localhost:3000';
 // 增加默认的请求的路径
 //  拦截器
@@ -23,4 +23,24 @@ export let getBooks = () => {
 // 删除某一本图书
 export let removeBook = (id) => {
     return axios.delete(`/book?id=${id}`);
+}
+
+// 获取某一本书
+/**
+ * 
+ * @param {*} id 
+ */
+export let findOneBook = (id) => {
+    return axios.get(`/book?id=${id}`);
+}
+
+// 修改图书
+/**
+ * 
+ * @param {*} id 编号
+ * @param {*} data 数据 请求体发送
+ * @returns {AxiosPromise<T>}
+ */
+export let updateBook = (id, data) => {
+    return axios.put(`/book?id=${id}`, data);
 }
