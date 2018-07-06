@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import Tab from './base/Tab.vue';
+import Tab from "./base/Tab.vue";
 export default {
   name: "App",
-  components:{
+  components: {
     Tab
   }
 };
@@ -27,8 +27,15 @@ li {
 a {
   text-decoration: none;
 }
-input,button{
+input,
+button {
   -webkit-appearance: none;
 }
-
+.content {
+  position: fixed;
+  width: 100%;
+  top: 40px;
+  bottom: 50px;
+  overflow: auto;
+}
 </style>

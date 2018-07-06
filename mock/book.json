@@ -1,0 +1,51 @@
+[
+    {
+        "bookCover": "//img10.360buyimg.com/n2/s240x240_jfs/t19054/355/1253612100/145321/f1b3a925/5ac23694Nfc9e2ce3.jpg!q70.jpg",
+        "bookName": "Vue.js权威指南",
+        "bookInfo": "程序设计 开发web界面前端",
+        "bookPrice": 78.2,
+        "bookId": 1
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t9508/97/2285719018/62961/99c5b1b7/59f299b4Nc9e78adb.jpg!q70.jpg",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 61.4,
+        "bookId": 2
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 43.6,
+        "bookId": 3
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 43.6,
+        "bookId": 4
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 43.6,
+        "bookId": 5
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 43.6,
+        "bookId": 6
+    },
+    {
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 43.6,
+        "bookId": 7
+    }
+]
