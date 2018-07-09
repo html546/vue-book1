@@ -44,3 +44,14 @@ export let findOneBook = (id) => {
 export let updateBook = (id, data) => {
     return axios.put(`/book?id=${id}`, data);
 }
+
+export let addBook = (data) => {
+    return axios.post('/book', data);
+}
+export let getAll = () => {
+    return axios.all([getSliders(), getHotBook()]);
+}
+// 根据偏移量 返回对应的数据 5 => 5-10
+export let pagination = (offset) => {
+    return axios.get(`/page?offset=${offset}`);
+};
