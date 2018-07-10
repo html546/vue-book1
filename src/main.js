@@ -8,8 +8,17 @@ import VueAwesomeSwiper from 'vue-awesome-swiper';
 // 使用轮播图插件
 Vue.use(VueAwesomeSwiper);
 require('swiper/dist/css/swiper.css');
+// 图片懒加载
+import VueLazyload from 'vue-lazyload';
 
 Vue.config.productionTip = false
+
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'http://img1.imgtn.bdimg.com/it/u=3363260167,1921263232&fm=200&gp=0.jpg',
+  loading: 'http://img.lanrentuku.com/img/allimg/1212/5-121204193R0-50.gif',
+  attempt: 1
+})
 
 /* eslint-disable no-new */
 new Vue({

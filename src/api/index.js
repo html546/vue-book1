@@ -1,5 +1,4 @@
 import axios, { AxiosPromise } from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000';
 // 增加默认的请求的路径
 //  拦截器
 axios.interceptors.response.use((res) => {

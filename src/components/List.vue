@@ -5,7 +5,7 @@
     <div class="content" ref="scroll" @scroll="loadMore">
       <ul>
         <router-link v-for="(book,index) in books" :key="index" :to="{name:'detail',params:{bid:book.bookId}}" tag="li">
-          <img :src="book.bookCover" alt="">
+          <img v-lazy="book.bookCover" alt="">
           <div>
             <h4>{{book.bookName}}</h4>
             <p>{{book.bookInfo}}</p>
@@ -110,7 +110,7 @@ export default {
       }, 60);
     },
     more() {
-      this.getData();
+      // this.getData();
     },
     async getData() {
       if (this.hasMore && !this.isLoading) {
