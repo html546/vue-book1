@@ -12,7 +12,7 @@
             <b>{{book.bookPrice}}</b>
             <div class="btn-list">
               <button @click.stop="remove(book.bookId)">删除</button>
-              <button @click.stop>添加</button>
+              <button @click.stop="addCart(book)">添加</button>
             </div>
           </div>
         </router-link>
@@ -25,6 +25,7 @@
 <script>
 import MHeader from "../base/MHeader.vue";
 import { pagination, removeBook } from "../api";
+import * as Types from '../store/mutations-type';
 export default {
   created() {
     this.getData();
@@ -105,6 +106,9 @@ export default {
   computed: {},
 
   methods: {
+    addCart(book){
+      this.$store.commit(Types.ADD_CART,book);
+    },
     loadMore() {
       //   卷去的高度 当前可见区域  总高
       // 触发scroll事件 可能触发n次 先进来开一个定时器,下次触发时将上一次定时器清除掉
