@@ -27,7 +27,7 @@
 import MHeader from "../base/MHeader.vue";
 import Swiper from "../base/Swiper.vue";
 import { getAll } from "../api";
-import Loading from '../base/Loading.vue';
+import Loading from "../base/Loading.vue";
 export default {
   created() {
     /* this.getSlider(); //获取轮播图

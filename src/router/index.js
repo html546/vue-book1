@@ -17,25 +17,29 @@ export default new Router({
     {
       path: '/home',
       component: () => import('../components/Home.vue'),
-      meta: { keepAlive: true }
+      meta: { keepAlive: true, title: '首页' }
     },
     {
       path: '/collect',
-      component: () => import('../components/Collect.vue')
+      component: () => import('../components/Collect.vue'),
+      meta: { title: '收藏' }
     },
     {
       path: '/add',
-      component: () => import('../components/Add.vue')
+      component: () => import('../components/Add.vue'),
+      meta: { title: '添加' }
     },
     // /detail/1  {bid:1} 路径参数 必须有但是可以随机
     {
       path: '/detail/:bid',
       component: () => import('../components/Detail.vue'),
-      name: 'detail'
+      name: 'detail',
+      meta: { title: '详情' }
     },
     {
       path: '/list',
-      component: () => import('../components/List.vue')
+      component: () => import('../components/List.vue'),
+      meta: { title: '列表' }
     },
     {
       path: '*',

@@ -21,13 +21,13 @@ function write(data, cb) { //写入内容
 }) */
 let pageSize = 5;// 每页显示五个
 http.createServer((req, res) => {
-    /* res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
     res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
     res.setHeader('X-Powered-By', '3.2.1');
     if (req.method == 'OPTIONS') {
         return res.end();
-    } */
+    }
     let { pathname, query } = url.parse(req.url, true); //true把query转化成对象
 
     if (pathname === '/page') {
@@ -128,7 +128,7 @@ http.createServer((req, res) => {
     }
 
     // 读取一个路径
-    fs.stat('.' + pathname, function (err, stats) {
+    /* fs.stat('.' + pathname, function (err, stats) {
         if (err) {
             fs.createReadStream('index.html').pipe(res);
         } else {
@@ -139,5 +139,5 @@ http.createServer((req, res) => {
                 fs.createReadStream('.' + pathname).pipe(res);
             }
         }
-    });
+    }); */
 }).listen(3000)

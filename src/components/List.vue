@@ -10,7 +10,10 @@
             <h4>{{book.bookName}}</h4>
             <p>{{book.bookInfo}}</p>
             <b>{{book.bookPrice}}</b>
-            <button @click.stop="remove(book.bookId)">删除</button>
+            <div class="btn-list">
+              <button @click.stop="remove(book.bookId)">删除</button>
+              <button @click.stop>添加</button>
+            </div>
           </div>
         </router-link>
       </ul>
@@ -43,13 +46,15 @@ export default {
     let scroll = this.$refs.scroll; //获取到要拖拽的元素
     let top = scroll.offsetTop;
     let distance = 0;
+    let isMove = false;
     scroll.addEventListener(
       "touchstart",
       e => {
         // 滚动条在最顶端时 并且 当前盒子在顶端的时候 才继续走
-        if (scroll.scrollTop != 0 || scroll.offsetTop != top) return;
+        if (scroll.scrollTop != 0 && scroll.offsetTop != top) return;
         let start = e.touches[0].pageY; //手指点击的开始
         let move = e => {
+          isMove = true;
           let current = e.touches[0].pageY;
           distance = current - start; //求的拉动的距离 负的就不要了
           if (distance > 0) {
@@ -67,6 +72,8 @@ export default {
           }
         };
         let end = e => {
+          if (!isMove) return;
+          isMove = false;
           clearInterval(this.timer1);
           this.timer1 = setInterval(() => {
             // 一共distance 每次-1
@@ -172,5 +179,9 @@ export default {
   line-height: 30px;
   font-size: 20px;
   text-align: center;
+}
+.btn-list {
+  display: flex;
+  justify-content: space-around;
 }
 </style>

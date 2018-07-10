@@ -161,10 +161,10 @@
         "bookId": 23
     },
     {
-        "bookCover": "https://img13.360buyimg.com/n2/s240x240_jfs/t5107/58/1653926146/128683/79be7ee8/5912e2fcNf9a839fc.jpg!q70.jpg",
-        "bookPrice": 51.6,
-        "bookInfo": "资深架构师十余年工程经验结晶。由浅入深介绍如何用React和Redux构建前端项目，产出高质量易维护代码",
-        "bookName": "深入浅出react和redux",
+        "bookCover": "//img14.360buyimg.com/n2/s240x240_jfs/t4663/309/1126020970/52124/916462f1/58d8cf84Nee68b7b9.jpg!q70.jpg.webp",
+        "bookName": "Vue.js实战",
+        "bookInfo": "尤雨溪推荐 随书附赠示例代码下载资源",
+        "bookPrice": 78912,
         "bookId": 24
     }
 ]
